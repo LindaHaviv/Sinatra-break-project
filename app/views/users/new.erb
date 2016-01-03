@@ -1,0 +1,28 @@
+<h1>Create a New User</h1>
+
+<form action="/users" method="POST">
+  <label>Name:</label>
+
+  <br></br>
+
+  <input type="text" name="user[name]">
+
+  <br></br>
+
+  <label>Choose an existing tweet:</label>
+
+  <br></br>
+
+  <%Tweet.all.each do |tweet|%>
+    <input type="checkbox" name="user[tweet_ids][]" value="<%=tweet.id%>"><%=tweet.content%></input><br>
+  <%end%>
+
+  <br></br>
+
+    <label>and/or, create a new tweet:</label>
+    <br></br>
+    <label>New Tweet:</label>
+      <input  type="text" name="tweet[content]"></input>
+    <br></br>
+  <input type="submit" value="Create User">
+</form>

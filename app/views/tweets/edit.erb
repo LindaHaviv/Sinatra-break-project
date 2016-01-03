@@ -1,0 +1,29 @@
+<h1>Update Tweet</h1>
+
+<form action="/tweets/<%=@tweets.id%>" method="POST">
+  <label>Tweet:</label>
+
+  <br></br>
+
+  <input type="text" name="tweet[content]" value="<%=@tweets.content%>">
+
+  <br></br>
+
+  <label>Choose an existing user:</label>
+
+  <br></br>
+
+  <%User.all.each do |user|%>
+    <input type="checkbox" name="tweet[user_id][]" value="<%=user.id%>" <%='checked' if (@tweet.user_id.equal?(user.id)) %>><%=user.name%></input>
+  <%end%>
+
+  <br></br>
+
+  <label>and/or, create a new user:</label>
+  <br></br>
+  <label>name:</label>
+    <input  type="text" name="user[name]"></input>
+  <br></br>
+  <input type="submit" value="Create Tweet">
+</form>
+

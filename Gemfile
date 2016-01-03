@@ -10,6 +10,8 @@ gem 'sqlite3'
 gem 'thin'
 gem 'shotgun'
 gem 'pry'
+gem 'faker'
+gem 'launchy'
 
 group :test do
   gem 'rspec'
