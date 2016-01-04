@@ -43,53 +43,53 @@
 
 
 body {
-    background-image: url("http://previews.123rf.com/images/anelina/anelina1106/anelina110600018/9842102-abstract-background-Stock-Vector-technology.jpg");
+    background-image: url("http://lorempixel.com/1920/1920/nature/");
     text-align: center;
     padding: 60px;
     margin: auto;
-/*    background-size: cover;
-    padding: 30px;
-    margin: 10px;
-    color: #8F8F8F*/
+    background-size:     cover;                     
+    background-repeat:   no-repeat;
+    background-position: center center; 
 }
 
-p {
-  font-size: 20px;
-}
 
 form {
-  color: blue;
+  color: gold;
   font-size: 20px;
 }
 
 
 h1 {
-  color: #8F8F8F;
-  font-size: 40px;
+  color: white;
+  font-size: 50px;
 /*  margin:0;
   text-align: center;
   margin-top: 20px*/
 }
 
-h2, h3{
-   color: #8F8F8F;
+h2, h3, h4{
+   color: white;
 }
 
-ul, ol {
+h2 {
+  font-size: 30px;
+}
+
+p {
   color: #8F8F8F;
   font-family: 'Libre Baskerville', serif;
-  font-size: 20px;
+  font-size: 25px;
   padding: 5px;
 }
 
 /* unvisited link */
 a:link {
-    color: gray;
+    color: white;
 }
 
 /* visited link */
 a:visited {
-    color: gray;
+    color: white;
 }
 
 /* mouse over link */
@@ -104,9 +104,18 @@ a:active {
 
 #button {
   font-size: 20px;
-  background-color: white;
-  border: 5px solid gray;
-  color: gray;
+  background-color: gray;
+  border: 3px solid white;
+  color: white;
+}
+
+#motto {
+  color: white;
+  font-size: 50px;
+}
+
+.rm_underline {
+  text-decoration: none;
 }
 
 

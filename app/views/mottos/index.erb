@@ -2,12 +2,14 @@
 <body class="center">
   
   <h1>All Mottos</h1>
-    <ul>
+    <br><br>
      <% Motto.all.each do |motto| %>
-      <li><a href="/mottos/<%=motto.id%>"><%= motto.content %></a></li>
+      <p><a class="rm_underline" href="/mottos/<%=motto.id%>"><%= motto.content %></a></p><br>
       <% end %>
-   </ul>
     <br><br><br>
+    <p>
+      <a href="/">Home</a>
+    </p>
     <p>
       <a href="/mottos/new">Create a New Motto</a>
     </p>

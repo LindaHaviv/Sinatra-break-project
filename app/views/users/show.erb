@@ -2,18 +2,33 @@
 <body class="center">
   
   <h1><%=@user.name%></h1>
-  <h4>Mottos:</h4>
+  <br>
+  <h3>Mottos:</h3>
   <br><br>
-  <ul>
-    <%@user.mottos.each do |motto|%>
-    <li><%=motto.content%></li>
-    <%end%>
-  </ul>
 
-  <br><br>
-  <form method ="post" action="/users/<%= @user.id %>/delete">
-    <input type="text" name="name">
-    <input type="submit" id="button" value="delete">
-  </form>
+    <%@user.mottos.each do |motto|%>
+    <p id="motto"><%=motto.content%></p><br>
+    <%end%>
+
+    <br><br><br>
+    <form method ="post" action="/users/<%= @user.id %>/delete">
+      <input type="submit" id="button" value="DELETE">
+    </form>
+    <br><br><br>
+
+    <p>
+      <a href="/">Home</a>
+    </p>
+    <p>
+      <a href="/users">See All Users</a>
+    </p>
+    <p>
+      <a href="/mottos">See All Mottos</a>
+    </p>
+    <p>
+      <a href="/users/<%=@user.id%>/edit">Update User</a>
+    </p>
+
+
 
 </body>

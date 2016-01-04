@@ -3,12 +3,14 @@
   
 
  <h1>All Users</h1>
-  <ul>
+    <br><br>
      <% User.all.each do |user| %>
-      <li><a href="/users/<%=user.id%>"><%= user.name %></a></li>
+      <p><a class="rm_underline" href="/users/<%=user.id%>"><%= user.name %></a></p><br>
       <% end %>
-   </ul>
   <br><br><br>
+  <p>
+      <a href="/">Home</a>
+  </p>
   <p>
     <a href="/users/new">Create New User</a>
   </p>
