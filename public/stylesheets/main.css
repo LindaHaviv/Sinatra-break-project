@@ -53,6 +53,15 @@ body {
     color: #8F8F8F*/
 }
 
+p {
+  font-size: 20px;
+}
+
+form {
+  color: blue;
+  font-size: 20px;
+}
+
 
 h1 {
   color: #8F8F8F;
@@ -62,11 +71,42 @@ h1 {
   margin-top: 20px*/
 }
 
+h2, h3{
+   color: #8F8F8F;
+}
+
 ul, ol {
   color: #8F8F8F;
   font-family: 'Libre Baskerville', serif;
   font-size: 20px;
   padding: 5px;
+}
+
+/* unvisited link */
+a:link {
+    color: gray;
+}
+
+/* visited link */
+a:visited {
+    color: gray;
+}
+
+/* mouse over link */
+a:hover {
+    color: gold;
+}
+
+/* selected link */
+a:active {
+    color: gray;
+}
+
+#button {
+  font-size: 20px;
+  background-color: white;
+  border: 5px solid gray;
+  color: gray;
 }
 
 
