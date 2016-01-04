@@ -1,3 +1,5 @@
+<body class="center">
+
 <h1>Update User</h1>
 
 <form action="/users/<%=@user.id%>" method="POST">
@@ -9,21 +11,23 @@
 
   <br></br>
 
-  <label>Choose an existing tweet:</label>
+  <label>Choose an existing motto:</label>
 
   <br></br>
 
-  <%Tweet.all.each do |tweet|%>
-    <input type="checkbox" name="user[tweet_ids][]" value="<%=tweet.id%>" <%='checked' if @user.tweets.include?(tweet) %>><%=tweet.content%></input>
+  <%Motto.all.each do |motto|%>
+    <input type="checkbox" name="user[motto_ids][]" value="<%=motto.id%>" <%='checked' if @user.mottos.include?(motto) %>><%=motto.content%></input>
   <%end%>
 
   <br></br>
 
-  <label>and/or, create a new tweet:</label>
+  <label>and/or, create a new motto:</label>
   <br></br>
   <label>name:</label>
-    <input  type="text" name="tweet[content]"></input>
+    <input  type="text" name="motto[content]"></input>
   <br></br>
-  <input type="submit" value="Create User">
+  <input type="submit" value="Update User">
 </form>
+
+</body>
 

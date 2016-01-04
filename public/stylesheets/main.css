@@ -1,0 +1,74 @@
+
+@import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:400italic);
+/********** Fixes **********/
+
+* {
+  margin:0;
+  padding:0;
+  border:0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  line-height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+/*///LAYOUT///*/
+
+* {
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*.center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}*/
+
+
+/*///GLOBAL///*/
+
+
+body {
+    background-image: url("http://previews.123rf.com/images/anelina/anelina1106/anelina110600018/9842102-abstract-background-Stock-Vector-technology.jpg");
+    text-align: center;
+    padding: 60px;
+    margin: auto;
+/*    background-size: cover;
+    padding: 30px;
+    margin: 10px;
+    color: #8F8F8F*/
+}
+
+
+h1 {
+  color: #8F8F8F;
+  font-size: 40px;
+/*  margin:0;
+  text-align: center;
+  margin-top: 20px*/
+}
+
+ul, ol {
+  color: #8F8F8F;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 20px;
+  padding: 5px;
+}
+
+
+
+

@@ -1,0 +1,17 @@
+
+<body class="center">
+  
+  <h1>All Mottos</h1>
+    <ul>
+     <% Motto.all.each do |motto| %>
+      <li><a href="/mottos/<%=motto.id%>"><%= motto.content %></a></li>
+      <% end %>
+   </ul>
+    <br><br><br>
+    <p>
+      <a href="/mottos/new">Create a New Motto</a>
+    </p>
+    <p>
+      <a href="/users">See All Users</a>
+    </p>
+</body>

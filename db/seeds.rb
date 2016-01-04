@@ -17,7 +17,7 @@
 
 
 linda = User.create(name:"Linda")
-Tweet.create(content: "fake tweet", user: linda)
-Tweet.create(content: "fake tweet 2", user: linda)
+Motto.create(content: "Flatiron School rocks", user: linda)
+
 
 

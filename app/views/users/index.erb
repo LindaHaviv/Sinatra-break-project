@@ -1,13 +1,19 @@
+ 
+<body class="center">
+  
+
  <h1>All Users</h1>
-    <ul>
+  <ul>
      <% User.all.each do |user| %>
       <li><a href="/users/<%=user.id%>"><%= user.name %></a></li>
       <% end %>
    </ul>
-
+  <br><br><br>
   <p>
     <a href="/users/new">Create New User</a>
   </p>
   <p>
-    <a href="/tweets">See All Tweets</a>
+    <a href="/mottos">See All Mottos</a>
   </p>
+
+</body>

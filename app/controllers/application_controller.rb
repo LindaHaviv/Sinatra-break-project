@@ -2,15 +2,15 @@ class ApplicationController < Sinatra::Base
   register Sinatra::ActiveRecordExtension
   set :session_secret, "my_application_secret"
   set :views, Proc.new { File.join(root, "../views/") }
-  set :public_folder, File.dirname(__FILE__) + '/static'
+  # set :public_folder, File.dirname(__FILE__) + '/static'
 
   get '/' do
     erb :index
   end
 
-  get '/tweets' do
-    @tweets = Tweet.all
-    erb :'/tweets/index'
+  get '/mottos' do
+    @mottos = Motto.all
+    erb :'/mottos/index'
   end
 
   get '/users' do
@@ -18,45 +18,45 @@ class ApplicationController < Sinatra::Base
     erb :'/users/index'
   end
 
-  get '/tweets/new' do
-    erb :'/tweets/new'
+  get '/mottos/new' do
+    erb :'/mottos/new'
   end
 
   get '/users/new' do
     erb :'/users/new'
   end
 
-  post '/tweets' do 
-     @tweet = Tweet.create(params[:tweet])
+  post '/mottos' do 
+     @motto = Motto.create(params[:motto])
     if !params["user"]["name"].empty?
-      @tweet.user = User.create(name: params["user"]["name"])
+      @motto.user = User.create(name: params["user"]["name"])
     end
-    @tweet.save
-    redirect to "users/#{@user.id}"
+    @motto.save
+    redirect to "mottos/#{@motto.id}"
   end
 
   post '/users' do 
     @user = User.create(params[:user])
-    if !params["tweet"]["content"].empty?
-      @user.tweets << Tweet.create(content: params["tweet"]["content"])
+    if !params["motto"]["content"].empty?
+      @user.mottos << Motto.create(content: params["motto"]["content"])
     end
     @user.save
     redirect to "users/#{@user.id}"
   end
 
-  get '/tweets/:id/edit' do 
-    @tweets = Tweet.find(params[:id])
-    erb :'/tweets/edit'
+  get '/mottos/:id/edit' do 
+    @motto = Motto.find(params[:id])
+    erb :'/mottos/edit'
   end
 
   get '/users/:id/edit' do 
-    @users = User.find(params[:id])
+    @user = User.find(params[:id])
     erb :'/users/edit'
   end
 
-  get '/tweets/:id' do 
-    @tweet = Tweet.find(params[:id])
-    erb :'/tweets/show'
+  get '/mottos/:id' do 
+    @motto = Motto.find(params[:id])
+    erb :'/mottos/show'
   end
 
   get '/users/:id' do 
@@ -64,24 +64,45 @@ class ApplicationController < Sinatra::Base
     erb :'/users/show'
   end
 
-   post '/tweets/:id' do 
-    @tweet = Tweet.find(params[:id])
-    @tweet.update(params["tweet"])
+   post '/mottos/:id' do 
+    @motto = Motto.find(params[:id])
+    @motto.update(params["motto"])
     if !params["user"]["name"].empty?
-      @tweet.user = User.create(name: params["user"]["name"])
+      @motto.user = User.create(name: params["user"]["name"])
     end
-    @tweet.save
-    redirect to "tweets/#{@tweet.id}"
+    @motto.save
+    redirect to "/mottos/#{@motto.id}"
   end
 
    post '/users/:id' do 
     @user = User.find(params[:id])
     @user.update(params["user"])
     if !params["user"]["name"].empty?
-      @user.tweets << Tweet.create(content: params["tweet"]["content"])
+      @user.mottos << Motto.create(content: params["motto"]["content"])
     end
     @user.save
-    redirect to "users/#{@user.id}"
+    redirect to "/users/#{@user.id}"
+  end
+
+
+  get '/mottos/:id/delete' do
+    @motto = Motto.find(@params[:id])
+    erb :'/mottos/show'
+  end
+
+  get '/users/:id/delete' do
+    @user = User.find(@params[:id])
+    erb :'/users/show'
+  end
+
+  post '/mottos/:id/delete' do
+    @motto = Motto.find(params[:id]).destroy
+    redirect '/mottos'
+  end
+
+  post '/users/:id/delete' do
+    @user = User.find(params[:id]).destroy
+    redirect '/users'
   end
 
 

@@ -1,0 +1,32 @@
+<body class="center">
+
+<h1>Create a new Motto</h1>
+
+<form action="/mottos" method="POST">
+  <label>Motto:</label>
+
+  <br></br>
+
+  <input type="text" name="motto[content]">
+
+  <br></br>
+
+  <label>Choose an existing user:</label>
+
+  <br></br>
+
+  <%User.all.each do |user|%>
+    <input type="checkbox" name="motto[user_id]" value="<%=user.id%>"><%=user.name%></input>
+  <%end%>
+
+  <br></br>
+
+    <label>and/or, create a new user:</label>
+    <br></br>
+    <label>name:</label>
+      <input  type="text" name="user[name]"></input>
+    <br></br>
+  <input type="submit" value="Create Motto">
+</form>
+
+</body>
